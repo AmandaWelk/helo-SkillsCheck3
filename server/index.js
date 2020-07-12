@@ -19,6 +19,10 @@ massive({
 
 app.use(express.json());
 
+//auth endpoints
+app.post('/api/auth/register', controller.register);
+app.post('/api/auth/login', controller.login);
+
 app.listen(SERVER_PORT, () => {
     console.log(`Server listening on port ${SERVER_PORT}.`);
 });
