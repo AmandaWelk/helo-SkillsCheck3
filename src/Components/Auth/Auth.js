@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './auth.css';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getUser} from '../../ducks/reducer';
 
@@ -27,21 +28,21 @@ class Auth extends Component {
     }
 
     handleRegister = () => {
+        console.log('worked')
         const {username, password} = this.state;
         axios.post('/api/auth/register', {username, password})
         .then(res => {
             this.props.getUser(res.data);
-            this.props.history.push('/dashboard');
         })
         .catch(err => console.log(err))
     }
 
     handleLogin = () => {
+        console.log('worked')
         const {username, password} = this.state;
         axios.post('/api/auth/login', {username, password})
         .then(res => {
             this.props.getUser(res.data);
-            this.props.history.push('/dashboard');
         })
         .catch(err => console.log(err));
     }
@@ -56,8 +57,12 @@ class Auth extends Component {
                 <p>Password: <input type="password" onChange={(event) => this.handlePasswordInput(event)} value={this.state.password}/> </p>
                 </div>
                 <div className="abuttons">
-                    <button className="auth-button" onClick={this.handleLogin}>Login</button>
-                    <button className="auth-button" onClick={this.handleRegister}>Register</button>
+                    <Link to="/dashboard">
+                    <button className="auth-button" onClick={ () => this.handleLogin()}>Login</button>
+                    </Link>
+                    <Link to="/dashboard">
+                    <button className="auth-button" onClick={ () => this.handleRegister()}>Register</button>
+                    </Link>
                 </div>
             </div>
         )
