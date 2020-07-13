@@ -18,7 +18,6 @@ function Nav(props) {
             </div>
         )
     }
-}
 
 function mapStateToProps(state) {
     return {
