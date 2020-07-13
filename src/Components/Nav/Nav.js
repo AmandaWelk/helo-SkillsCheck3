@@ -3,10 +3,9 @@ import {connect} from 'react-redux';
 import routes from '../../routes';
 import {Link} from 'react-router-dom';
 
-class Nav extends Component {
-    render() {
+function Nav(props) {
         return(
-            <div>
+            <div className="navBody">
                 <Link to={'/dashboard'}>
                 <button>Home</button>
                 </Link>
