@@ -1,4 +1,16 @@
-.navBody {
+.nav {
     height: 100vh;
     width: 10%;
+    background-image: linear-gradient(#FF9770, #FF70A6);
+}
+
+.topNav {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.logout {
+    margin-top: 700px;
+    margin-left: 50px;
 }

@@ -15,10 +15,12 @@ class Dashboard extends Component {
 
     render() {
         return(
-            <div>
-                <input placeholder='Search by Title'/>
-                <button>Search</button>
-                <button>Reset</button>
+            <div className="dash">
+                <div>
+                    <input placeholder='Search by Title' value={this.state.search}/>
+                    <button>Search</button>
+                    <button>Reset</button>
+                </div>
             </div>
         )
     }
